@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz dia das Mães!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+     <style>
+    body {
+      background-image: url('foto7.png');
+      background-size: cover; /* Para cobrir toda a tela */
+      background-repeat: no-repeat; /* Para não repetir a imagem */
+      background-attachment: fixed; /* Para manter a imagem fixa ao rolar */
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav id="navbar" class="navbar fixed top-0 w-full bg-transparent p-4 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:underline">Início</a></li>
+            </ul>
+        </div>
+    </nav>
+
+       <section id="home" class="min-h-screen flex items-center justify-center">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4"><strong>Nos te Amamos!</strong></h2>
+            <p class="text-lg mb-6">Mãe, este cantinho virtual é um pequeno gesto para expressar todo o meu amor e gratidão que temos por você.</p>
+            <a href="Mensagem.html" class="bg-yellow-500 text-black px-6 py-2 rounded hover:bg-yellow-600"><strong>❤️Clique aqui!❤️</strong></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-50 text-center">
+        <p><strong>&copy; Feito com ❤️ Para a melhor mãe do mundo!</strong></p>
+    </footer>
+    <!-- JavaScript -->
+    <script>
+        // Navegação Suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mudar Estilo da Navbar ao Rolar
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Botão Voltar ao Topo
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
